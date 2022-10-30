@@ -592,7 +592,12 @@ value: ())
 	$( "#interactionTypes" ).dialog();
   }
   
-  
+  function deleteWord(){
+	if (document.getElementById("textareaEle").value){
+	  var lastIndex = document.getElementById("textareaEle").value.lastIndexOf(' ');
+	  document.getElementById("textareaEle").value = document.getElementById("textareaEle").value.substring(0, lastIndex);
+	}
+  }
   
 </script>
 
@@ -629,7 +634,7 @@ value: ())
 			<textarea id="textareaEle" class="textArea" ></textarea>
 		</div>
 		<div id="word-delete" class="word-delete">
-			<img/>
+			<button name='delete-word' class='delete-word' onclick="deleteWord()">
 		</div>
 	</div>
 	<ul id="ul-level-1" class="ul-container">
